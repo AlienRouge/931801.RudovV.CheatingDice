@@ -16,11 +16,10 @@ namespace Dice
             this._frequency = frequency;
         }
 
-        public int RollDice()
+        public int RollDice(Random seed)
         {
-            Random _random = new Random();
-             var stats = 0;
-             var q = (double)_random.NextDouble();
+            var stats = 0;
+             var q = seed.NextDouble();
             for (int j = 0; j < _frequency.Length; j++)
             {
                 q -= _frequency[j];

@@ -19,6 +19,8 @@ namespace Dice
         private readonly Player _player;
         private readonly Player _computer;
 
+        private Random _random = new Random();
+
         int rollNum = 0;
 
 
@@ -47,8 +49,8 @@ namespace Dice
 
         private void RollButton_Click(object sender, EventArgs e)
         {
-            int playerResult = _player.RollDice();
-            int computerResult = _computer.RollDice();
+            int playerResult = _player.RollDice(_random);
+            int computerResult = _computer.RollDice(_random);
 
             switch (rollNum)
             {
